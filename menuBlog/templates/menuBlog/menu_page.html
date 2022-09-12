@@ -1,0 +1,32 @@
+{% extends 'menuBlog/base.html' %}
+
+{% block content %}
+    <div class="currencyColumns">
+    {% for currency in currencies %}
+    <div>
+        <a href="/?currency={{currency.name}}" class="button">{{ currency.symbol }}</a>
+    </div>
+    {% endfor %}
+    </div>
+    {% for section in sections %}
+        <div class="section">
+            <h1><a href="">{{ section.name|linebreaksbr }}</a></h1>
+        </div>
+        <div class="dishDivContainer">
+        {% for dish in dishes %}
+            {% if dish.section == section %}
+            <div class="dishDiv"><a href="{% url 'dish_detail' name=dish.name %}">
+                <h3>{{ dish.name }}</h3>
+                <img class="dishImage" src="{{ dish.img.url }}">
+                <p>{{ dish.description }}</p>
+                <div class="priceGram">
+                    <p>{{ dish.gram }}g</p>
+                    <p>{{ dish.price }} {{currentCurrency}}</p>
+                </div></a>
+            </div>
+            {% endif %}
+        {% endfor %}
+            <div class="priceGram dishDiv"></div>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'menuBlog/base.html' %}
+
+{% block content %}
+    <div class="imageDetail">
+        <img class="dishImageDetail" src="{{ dish.img.url }}">
+    </div>
+    <div class="dishTextDetail">
+        <h1>{{ dish.name }}</h1>
+        <p>{{ dish.description }}</p>
+        <div class="priceGram">
+            <p>{{ dish.gram }}g</p>
+            <p>{{ dish.price }} ₴</p>
+        </div>
+    </div>
+{% endblock %}

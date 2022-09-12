@@ -1,0 +1,15 @@
+{% load static %}
+<html>
+    <head>
+        <title>Menu</title>
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa&subset=latin,cyrillic" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+    </head>
+    <body>
+    <div class="page-header">
+        <img class="logotype" src="{% static 'img/banner.jpg' %}">
+    </div>
+    {% block content %}
+    {% endblock %}
+    </body>
+</html>
